@@ -1,13 +1,12 @@
-select CustomerName, CustomerAddress from Customers with(nolock)
-where CustomerAddress = 'NY, USA'
-order by CustomerName;
+select CustomerName from Customers with(nolock)
+where CustomerAddress = 'NY, USA';
 
-SET NOCOUNT ON;
-SELECT o.OrderID, o.OrderDate, c.customerId, c.CustomerName, p.ProductName, p.Price, 
-od.Quantity, (p.Price * od.Quantity) AS TotalPerItem
-FROM Orders o WITH (NOLOCK)
-JOIN Customers c ON o.CustomerID = c.CustomerID
-JOIN OrderDetails od ON o.OrderID = od.OrderID
-JOIN Products p ON od.ProductID = p.ProductID
-ORDER BY o.OrderID;
+set nocount on;
+select o.OrderID, o.OrderDate, c.customerId, c.CustomerName, p.ProductName, p.Price, 
+od.Quantity, (p.Price * od.Quantity) as TotalPerItem from Orders o with(nolock)
+join Customers c on o.CustomerID = c.CustomerID
+join OrderDetails od on o.OrderID = od.OrderID
+join Products p on od.ProductID = p.ProductID
+order by o.OrderID;
  
+select CustomerName from Customers with(nolock);

@@ -1,8 +1,8 @@
-USE shopDb;  -- optional if already connected
+USE shopDb;
 
 GO
 
-CREATE PROCEDURE Normalization
+CREATE PROCEDURE AllInOne
 AS
 BEGIN
     select o.OrderID, o.OrderDate, c.customerId, c.CustomerName, p.ProductName, p.Price, 
@@ -15,7 +15,7 @@ END;
 GO
 
 
-EXEC Normalization;
+EXEC AllInOne;
 
 EXEC sp_helptext 'Normalization';
 

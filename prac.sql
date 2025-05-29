@@ -17,5 +17,5 @@ GO
 
 EXEC AllInOne;
 
-EXEC sp_helptext 'Normalization';
+EXEC sp_helptext 'AllInOne';
 

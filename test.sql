@@ -10,3 +10,5 @@ join Products p on od.ProductID = p.ProductID
 order by o.OrderID;
  
 select CustomerName from Customers with(nolock);
+
+
